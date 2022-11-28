@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import Form from 'react-bootstrap/Form';
 import "./address.css";
 
 // import assets
@@ -40,7 +40,7 @@ const Address = () => {
             {editStatus? 
             <div className="addressEditContainer">
                 <div>
-                    <input value={userName} onChange={event=>setUserName(event.target.value)}/>
+                    <input className="form-control" value={userName} onChange={event=>setUserName(event.target.value)}/>
                 </div>
                 <div>
                     <input value={jobTitle} onChange={event=>setJobTitle(event.target.value)}/>
