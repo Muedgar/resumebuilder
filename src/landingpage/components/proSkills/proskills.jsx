@@ -19,9 +19,10 @@ const ProSkills = () => {
             return;
         }
         let childElement = document.getElementById(currentId);
-        console.log("logging", currentId);
-        let newX = x - 10;
-        if(newX>0 && newX<261) {
+        
+        let newX = x - 839;
+        console.log("logging", childElement,x, newX, newX+"px");
+        if(newX>0 && newX<260) {
         
             childElement.style.width = newX+"px";
         

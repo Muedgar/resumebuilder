@@ -25,16 +25,16 @@ const PersonalSkills = () => {
     //    });
     for(let i=0;i<classNameLevels.length;i++) {
         let div = classNameLevels[i];
-        div.style.backgroundColor = "rgba(0, 0, 0, 0.536)";
+        div.style.backgroundColor = "rgba(199, 199, 199, 0.536)";
     }
     for(let i=0;i<classNameLevels.length;i++) {
         let div = classNameLevels[i];
         if(e.target !== div) {
             
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = "white";
        
         }else {
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = "white";
             
             break;
         }

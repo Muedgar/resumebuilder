@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Form from 'react-bootstrap/Form';
 import "./address.css";
 
 // import assets
@@ -11,7 +10,7 @@ import phoneIcon from "./assets/phone.svg";
 
 
 const Address = () => {
-    const [editStatus, setEditStatus] = useState(true);
+    const [editStatus, setEditStatus] = useState(false);
     const [userName, setUserName] = useState('JUSTIN NGUYEN');
     const [jobTitle, setJobTitle] = useState('DESIGN & FRONT DEVELOPER');
     const [phoneNumber, setPhoneNumber] = useState('84 - 969877097');

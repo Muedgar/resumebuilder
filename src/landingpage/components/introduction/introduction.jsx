@@ -29,7 +29,7 @@ const Introduction = () => {
             </div>
             :
             <div>
-                <textarea onChange={(event) => {
+                <textarea className="" onChange={(event) => {
                     setIntroduction(event.target.value)
                 }}>
                     {introduction}
