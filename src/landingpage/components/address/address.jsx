@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-
 import "./address.css";
 
 // import assets
@@ -11,7 +10,7 @@ import phoneIcon from "./assets/phone.svg";
 
 
 const Address = () => {
-    const [editStatus, setEditStatus] = useState(true);
+    const [editStatus, setEditStatus] = useState(false);
     const [userName, setUserName] = useState('JUSTIN NGUYEN');
     const [jobTitle, setJobTitle] = useState('DESIGN & FRONT DEVELOPER');
     const [phoneNumber, setPhoneNumber] = useState('84 - 969877097');
@@ -40,7 +39,7 @@ const Address = () => {
             {editStatus? 
             <div className="addressEditContainer">
                 <div>
-                    <input value={userName} onChange={event=>setUserName(event.target.value)}/>
+                    <input className="form-control" value={userName} onChange={event=>setUserName(event.target.value)}/>
                 </div>
                 <div>
                     <input value={jobTitle} onChange={event=>setJobTitle(event.target.value)}/>
