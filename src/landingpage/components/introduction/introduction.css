@@ -1,9 +1,9 @@
 .introduction {
     width: 250px;
-    height: 250px;
+    height: fit-content;
     overflow: hidden;
     position: relative;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     transition: all .3s ease-in;
     border-radius: 1px solid black;
     display: flex;

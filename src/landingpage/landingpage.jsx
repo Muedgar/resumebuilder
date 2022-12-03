@@ -11,6 +11,8 @@ import Address from "./components/address/address";
 import Introduction from "./components/introduction/introduction";
 import ProSkills from "./components/proSkills/proskills";
 import PersonalSkills from "./components/personalSkills/personalskills";
+import WorkExperience from "./components/workExperience/workexperience";
+import Education from "./components/education/education";
 
 // import styles
 export const LandingPage = React.forwardRef((props, ref) => {
@@ -25,7 +27,8 @@ export const LandingPage = React.forwardRef((props, ref) => {
                     <Address />
                 </div>
                 <div>
-
+                    <WorkExperience />
+                    <Education />
                 </div>
                 <div>
                     
