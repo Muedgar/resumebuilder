@@ -7,11 +7,19 @@
     overflow: hidden;
     display: flex;
     flex-direction: row;
+    background-color: white;
+    background-image:
+    linear-gradient(
+      to right,
+      white 65%,
+      rgb(113,81,169) 65%
+    );
 }
 
 .cv .rightPart {
     width: 65%;
     height: 100%;
+    background: transparent;
 }
 
 .cv .rightPart .profileandaddress {
@@ -26,12 +34,12 @@
 .cv .leftPart {
     width: 35%;
     height: 100%;
-    background-color: rgb(113,81,169);
     padding-top: 50px;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-bottom: 50px;
+    background: transparent;
 }
 

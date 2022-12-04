@@ -13,6 +13,8 @@ import ProSkills from "./components/proSkills/proskills";
 import PersonalSkills from "./components/personalSkills/personalskills";
 import WorkExperience from "./components/workExperience/workexperience";
 import Education from "./components/education/education";
+import Hobbies from "./components/hobbies/hobbies";
+import FollowMe from "./components/followMe/followme";
 
 // import styles
 export const LandingPage = React.forwardRef((props, ref) => {
@@ -29,6 +31,7 @@ export const LandingPage = React.forwardRef((props, ref) => {
                 <div>
                     <WorkExperience />
                     <Education />
+                    <Hobbies />
                 </div>
                 <div>
                     
@@ -42,6 +45,7 @@ export const LandingPage = React.forwardRef((props, ref) => {
                 <Introduction />
                 <ProSkills />
                 <PersonalSkills />
+                <FollowMe />
             </aside>
             </div>
         

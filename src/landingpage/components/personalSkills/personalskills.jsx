@@ -8,6 +8,7 @@ const PersonalSkills = () => {
     const [editStatus, setEditStatus] = useState(true);
     const [skills, setSkills] = useState(['Team Work','Communication','Creative','Organisation','Management']);
     const [skill, setSkill] = useState('');
+    const [newSkill, setNewSkill] = useState('');
 
 
      function handlePersonalLevel(e) {
@@ -71,13 +72,20 @@ const PersonalSkills = () => {
             </div>
             :
             <div className="personaladdSkill">
-                <input value={skill} onChange={event=>setSkill(event.target.value)}/>
+                <input placeholder="Replace Skill Name" value={skill} onChange={event=>setSkill(event.target.value)}/>
+                <input placeholder="New Skill" value={newSkill} onChange={event=>setNewSkill(event.target.value)}/>
                 <button onClick={() => {
                     if(!skill) {
                         return;
                     }
-                    setSkills([...skills,skill]);
-                }}>Add Skill</button>
+                    skills.forEach((skil,i)=> {
+                        if(skil.toUpperCase() === skill.toUpperCase()) {
+                            let newskills = skills;
+                            newskills[i] = newSkill;
+                            setSkills(newskills);
+                        }
+                    });
+                }}>Edit Skill</button>
             </div>
             }
         </div>
