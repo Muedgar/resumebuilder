@@ -8,6 +8,7 @@ const ProSkills = () => {
     const [editStatus, setEditStatus] = useState(true);
     const [skills, setSkills] = useState(['FIGMA','ILLUSTRATOR','INDESIGN','PHOTOSHOP','HTML/CSS','MS-WORD']);
     const [skill, setSkill] = useState('');
+    const [newSkill, setNewSkill] = useState('');
     const [currentId, setCurrentId] = useState('');
     
     
@@ -62,13 +63,20 @@ const ProSkills = () => {
             </div>
             :
             <div className="addSkill">
-                <input value={skill} onChange={event=>setSkill(event.target.value)}/>
+                <input placeholder="Replace Skill Name" value={skill} onChange={event=>setSkill(event.target.value)}/>
+                <input placeholder="New Skill" value={newSkill} onChange={event=>setNewSkill(event.target.value)}/>
                 <button onClick={() => {
                     if(!skill) {
                         return;
                     }
-                    setSkills([...skills,skill]);
-                }}>Add Skill</button>
+                    skills.forEach((skil,i)=> {
+                        if(skil.toUpperCase() === skill.toUpperCase()) {
+                            let newskills = skills;
+                            newskills[i] = newSkill;
+                            setSkills(newskills);
+                        }
+                    });
+                }}>Edit Skill</button>
             </div>
             }
         </div>

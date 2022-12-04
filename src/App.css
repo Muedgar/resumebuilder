@@ -27,3 +27,9 @@
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.504);
   transform: translateY(-4px);
 }
+.actionButtonClass {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

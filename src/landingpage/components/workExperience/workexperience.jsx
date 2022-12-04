@@ -39,8 +39,13 @@ function WorkExperience () {
                     <input type="text" value={year} onChange={e=>setYear(e.target.value)} placeholder="year" />
                     <input type="text" value={jobTitle} onChange={e=>setJobTitle(e.target.value)} placeholder="job title" />
                     <input type="text" value={location} onChange={e=>setLocation(e.target.value)} placeholder="location" />
-                    <textarea type="text" value={description} onChange={e=>setDescription(e.target.value)} placeholder="describe experience"></textarea>
+                    <textarea id="textAreaId" type="text" value={description} onChange={e=>setDescription(e.target.value)} placeholder="describe experience"></textarea>
                     <input type="button" onClick={()=> {
+                        if(!description || (description.length<252 || description.length>262)) {
+                            document.getElementById("textAreaId").style.border = "2px solid red";                            
+                            return;
+                        }
+                        document.getElementById("textAreaId").style.border = "2px solid green";
                         let obj = {
                             year,
                             jobTitle,

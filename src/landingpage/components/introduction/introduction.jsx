@@ -29,11 +29,14 @@ const Introduction = () => {
             </div>
             :
             <div>
-                <textarea className="" onChange={(event) => {
-                    setIntroduction(event.target.value)
-                }}>
-                    {introduction}
-                </textarea>
+                <textarea defaultValue={introduction} className="" onChange={(event) => {
+                    if(event.target.value.length<235 || event.target.value.length>265) {
+                        event.target.style.border = "2px solid red";
+                        return;
+                    }
+                    setIntroduction(event.target.value);
+                    event.target.style.border = "2px solid green";
+                }}></textarea>
             </div>
             }
         </div>
