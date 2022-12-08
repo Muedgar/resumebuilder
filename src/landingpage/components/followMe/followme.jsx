@@ -27,7 +27,7 @@ const FollowMe = () => {
                 {
                     links.map((skil,ky) => (
 
-                        <div className="personalskillContainer" key={ky}>
+                        <div className="personalskillContainer followM" key={ky}>
                             <div className="globeStyle">
                                 <img src={globe} alt="globe" />
                             </div>
