@@ -1,74 +1,43 @@
 <<<<<<< HEAD
 # resumebuilder
 =======
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# What is resumebuilder?
 
-In the project directory, you can run:
+A resume builder is an online app or piece of software that provides users with interactive forms and templates for creating a resume quickly and easily. Zety Resume Maker offers tips and suggestions to help you build each resume section fast, even if it's your very first job application.
 
-### `npm start`
+## Why build this resumebuilder?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I am a web developer, and I believe that practice the right way makes perfect, that is why I decided to undertake this challenge to grow my web programming skills.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How I solved this challenge?
 
-### `npm test`
+I started my separating frontend and backend repositories, and I built this project in 13 days.
+I pushed changes to each repository and I deployed the project on github.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Which Technologies did I use?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Front end: React, html, css, javascript and ReactPrint
+Backend: Express, MongoDB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to run this project?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Front end instructions
 
-### `npm run eject`
+#### Front end repository: https://github.com/Muedgar/resumebuilder.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Step 1: Clone this repository to your local environment
+Step 2: cd into the clone
+Step 3: run `npm start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Back end repository: https://github.com/Muedgar/amaliresumebuilderbackend.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Step 1: Clone this repository to your local environment
+Step 2: cd into the clone
+Step 3: add the following environment variables to your .env file
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`MONGO_URI` `PORT` `JWT_SECRET`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 1b3dce6 (Initialize project using Create React App)
+Step 4: run `npm run dev`
