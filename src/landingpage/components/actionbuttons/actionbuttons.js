@@ -1,10 +1,40 @@
 import React from "react";
 
+import prepareData from "./logicPrepareData";
+import saveData from "./saveData";
 
 // save data to the database.
 function ActionButtons() {
+
     return (
-    <div className='downloadContainer'><button>Save CV</button></div>
+    <div onClick={() => {
+        let addressContainer = document.querySelector(".addressContainer");
+        let workexperienceContainer = document.querySelectorAll(".experience");
+        let educationContainer = document.querySelector(".education");
+        let hobbiesContainer = document.querySelector(".hobbies");
+        let introduction = document.getElementById("introductionId");
+        let proskills = document.querySelectorAll(".skillContainer");
+        let personalskills = document.querySelectorAll(".pSkills");
+        let followme = document.querySelectorAll(".followM");
+
+        let preparedData = prepareData(addressContainer,workexperienceContainer,educationContainer,hobbiesContainer,introduction,proskills,personalskills,followme);
+
+       // console.log("preparedData", preparedData);
+
+        let data = {
+            user: preparedData[0],
+            address: [preparedData[1]],
+            introduction: [preparedData[2]],
+            workExperience: preparedData[3],
+            education: [preparedData[4]],
+            proSkills: preparedData[5],
+            personalSkills: preparedData[6],
+            hobbies: [preparedData[7]],
+            followme: preparedData[8]
+        }
+
+        saveData(data);
+    }} className='downloadContainer'><button>Save CV</button></div>
     )
 }
 

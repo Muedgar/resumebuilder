@@ -59,7 +59,7 @@ const PersonalSkills = () => {
 
                         <div className="personalskillContainer" key={ky}>
                             <h4>{skil}</h4>
-                            <div className="personalskillLevelContainer">
+                            <div className="personalskillLevelContainer pSkills">
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} one personalskillLevel`}></div>
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} two personalskillLevel`}></div>
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} three personalskillLevel`}></div>
