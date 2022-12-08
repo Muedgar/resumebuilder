@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState,useEffect} from 'react';
 
 import ReactToPrint from 'react-to-print';
 
@@ -8,8 +8,21 @@ import './App.css';
 import LandingPage from './landingpage/landingpage';
 import ActionButtons from './landingpage/components/actionbuttons/actionbuttons';
 import OtherActionButtons from './landingpage/components/actionbuttons/otheractionbuttons';
+import Auth from './auth/auth';
+
 
 function App() {
+  const[isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  useEffect(()=> {
+    console.log("calling useEffect ...");
+    if(sessionStorage.getItem("currentlyLoggedIn")) {
+      setIsLoggedIn(true);
+    }else {
+      setIsLoggedIn(false);
+    }
+  },[])
+
   const componentRef = useRef();
   // const pageStyl = `
   //     #cvId {
@@ -25,7 +38,17 @@ function App() {
   return (
     <div className="App">
       
-      <LandingPage ref={componentRef} />
+      {isLoggedIn?
+        <>
+        <div className='navbar'>
+          <h1>Welcome to Resume Builder</h1>
+          <h1>{sessionStorage.getItem("currentlyLoggedIn")}</h1>
+          <button onClick={() => {
+            sessionStorage.clear();
+            window.location = "/";
+          }}>Logout</button>
+        </div>
+        <LandingPage ref={componentRef} />
       <div className='actionButtonClass'>
       <ReactToPrint
         // pageStyle={pageStyl}
@@ -35,6 +58,14 @@ function App() {
       <ActionButtons />
       <OtherActionButtons />
       </div>
+        </>
+        :
+        <>
+          {/* show auth screen */}
+        <Auth/>
+        </>
+      }
+      
     </div>
   );
 }
