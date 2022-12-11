@@ -27,9 +27,7 @@ async function Signin(email, password, buttonSubmission) {
         buttonSubmission.style.width = "50%";
                                     buttonSubmission.value="Login Complete.";
                                 
-                                     setTimeout(() => {
-                                        buttonSubmission.value="Login.";
-                                    }, 3000);
+                                     
         
         sessionStorage.setItem("currentlyLoggedIn", data.user.username);
         window.location = "/";
