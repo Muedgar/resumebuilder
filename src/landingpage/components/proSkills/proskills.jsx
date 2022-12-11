@@ -9,28 +9,10 @@ const ProSkills = () => {
     const [skills, setSkills] = useState(['FIGMA','ILLUSTRATOR','INDESIGN','PHOTOSHOP','HTML/CSS','MS-WORD']);
     const [skill, setSkill] = useState('');
     const [newSkill, setNewSkill] = useState('');
-    const [currentId, setCurrentId] = useState('');
     
     
 
-    function handleSkillLevel(e) {
-        e.preventDefault();
-        var x = e.clientX;
-        if(!currentId) {
-            return;
-        }
-        let childElement = document.getElementById(currentId);
-        
-        let newX = x - 839;
-        console.log("logging", childElement,x, newX, newX+"px");
-        if(newX>0 && newX<260) {
-        
-            childElement.style.width = newX+"px";
-        
-        }
-        setCurrentId('');
-      }
-
+   
      
 
     return (
@@ -51,11 +33,24 @@ const ProSkills = () => {
                         <div className="skillContainer" key={ky}>
                             <h4>{skil}</h4>
                             <div onClick={(e) => {
-                                setCurrentId(`id${ky}`);
-                                handleSkillLevel(e);
+                                e.preventDefault();
+                                let settingCurrentId = `proSkillId${ky}`;
+                                console.log("set current id", settingCurrentId);
+                                
+                                
+        var x = e.clientX;
+       
+        let childElement = document.getElementById(settingCurrentId);
+        
+        let newX = x - 839;
+        if(newX>0 && newX<260) {
+        
+            childElement.style.width = newX+"px";
+        
+        }
                             }}  className="skillLevelContainer">
 
-                                <div id={`id${ky}`} className="skillLevel"></div>
+                                <div id={`proSkillId${ky}`} className="skillLevel"></div>
                             </div>
                         </div>
                     ))
