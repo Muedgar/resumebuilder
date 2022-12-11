@@ -4,6 +4,7 @@ async function Signin(email, password, buttonSubmission) {
         password
     }
 
+    console.log(data);
 
     const response = await fetch("https://amali-resumebuilder-backend.herokuapp.com/amaliresumebuilder/backend/api/login", {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -31,6 +32,31 @@ async function Signin(email, password, buttonSubmission) {
         
         sessionStorage.setItem("currentlyLoggedIn", data.user.username);
         window.location = "/";
+        let errorDiv = document.createElement("div");
+          errorDiv.setAttribute("class","errorDiv");
+          errorDiv.style.backgroundColor = "green";
+          let errorMessage = document.createElement("h1");
+          errorMessage.innerHTML = "<h1>Registration Complete, Wait while redirecting ...</h1>";
+          
+          let closeError = document.createElement("div");
+          closeError.addEventListener("click", () => {
+            errorDiv.style.transform = "translateX(150%)";
+            errorDiv.setAttribute("disabled", "true");
+            setTimeout(() => {
+              document.querySelector(".App").removeChild(errorDiv);
+            },1000)
+          });
+
+          let errorDivDiv = document.createElement("div");
+          
+          errorDivDiv.appendChild(closeError);
+          errorDivDiv.appendChild(errorMessage);
+
+          errorDiv.appendChild(errorDivDiv);
+
+          console.log(errorDiv);
+          document.querySelector(".App").appendChild(errorDiv);
+        
       }).catch(e=> {
        
         buttonSubmission.style.width = "80%";
@@ -39,7 +65,7 @@ async function Signin(email, password, buttonSubmission) {
                                     errorDiv.setAttribute("class","errorDiv");
                           
                                     let errorMessage = document.createElement("h1");
-                                    errorMessage.innerHTML = "<h1>Something went wrong, login again. Trying using a different email or password, because one might be wrong.</h1>";
+                                    errorMessage.innerHTML = "<h1>Something went wrong, login again. Trying using a different email or password, either one might be wrong.</h1>";
                                     
                                     let closeError = document.createElement("div");
                                     closeError.addEventListener("click", () => {
