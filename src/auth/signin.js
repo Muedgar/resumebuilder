@@ -35,7 +35,30 @@ async function Signin(email, password, buttonSubmission) {
        
         buttonSubmission.style.width = "80%";
                                     buttonSubmission.value="Something went wrong, login again.";
-                                
+                                    let errorDiv = document.createElement("div");
+                                    errorDiv.setAttribute("class","errorDiv");
+                          
+                                    let errorMessage = document.createElement("h1");
+                                    errorMessage.innerHTML = "<h1>Something went wrong, login again. Trying using a different email or password, because one might be wrong.</h1>";
+                                    
+                                    let closeError = document.createElement("div");
+                                    closeError.addEventListener("click", () => {
+                                      errorDiv.style.transform = "translateX(150%)";
+                                      errorDiv.setAttribute("disabled", "true");
+                                      setTimeout(() => {
+                                        document.querySelector(".App").removeChild(errorDiv);
+                                      },1000)
+                                    });
+                          
+                                    let errorDivDiv = document.createElement("div");
+                                    
+                                    errorDivDiv.appendChild(closeError);
+                                    errorDivDiv.appendChild(errorMessage);
+                          
+                                    errorDiv.appendChild(errorDivDiv);
+                          
+                                    console.log(errorDiv);
+                                    document.querySelector(".App").appendChild(errorDiv);   
       });
 }
 
