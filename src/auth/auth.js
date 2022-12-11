@@ -179,10 +179,7 @@ function Auth() {
                             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
                                 document.getElementById("registerButtonSubmission").value="Registering ...";
                                 Signup(username,email,password,document.getElementById("registerButtonSubmission"))
-                                setUsername('');
-                                setEmail('');
-                                setPassword('');
-                                setConfirmPassword('');     
+                                   
                             }
                         }
                     }} />
