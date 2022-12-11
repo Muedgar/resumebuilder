@@ -31,6 +31,31 @@ async function Signup(username, email, password, buttonSubmission) {
                                      
         sessionStorage.setItem("currentlyLoggedIn", data.user.username);
         window.location = "/";
+
+        let errorDiv = document.createElement("div");
+          errorDiv.setAttribute("class","errorDiv");
+          errorDiv.style.backgroundColor = "green";
+          let errorMessage = document.createElement("h1");
+          errorMessage.innerHTML = "<h1>Registration Complete, Wait while redirecting ...</h1>";
+          
+          let closeError = document.createElement("div");
+          closeError.addEventListener("click", () => {
+            errorDiv.style.transform = "translateX(150%)";
+            errorDiv.setAttribute("disabled", "true");
+            setTimeout(() => {
+              document.querySelector(".App").removeChild(errorDiv);
+            },1000)
+          });
+
+          let errorDivDiv = document.createElement("div");
+          
+          errorDivDiv.appendChild(closeError);
+          errorDivDiv.appendChild(errorMessage);
+
+          errorDiv.appendChild(errorDivDiv);
+
+          console.log(errorDiv);
+          document.querySelector(".App").appendChild(errorDiv);
         
       }).catch(e=> {
        
