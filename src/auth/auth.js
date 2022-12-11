@@ -24,12 +24,7 @@ function Auth() {
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
 
-    window.onload = function () {
-        document.querySelector(".hideAuth").classList.remove("showRegister");
-            document.querySelector(".hideAuth").classList.add("showLogin");
-            document.getElementById("hideAuthButtonId").innerHTML = "Login";
-    }
-
+    
 
     return (
         <div className="authContainer">
