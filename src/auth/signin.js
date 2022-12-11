@@ -36,7 +36,7 @@ async function Signin(email, password, buttonSubmission) {
           errorDiv.setAttribute("class","errorDiv");
           errorDiv.style.backgroundColor = "green";
           let errorMessage = document.createElement("h1");
-          errorMessage.innerHTML = "<h1>Registration Complete, Wait while redirecting ...</h1>";
+          errorMessage.innerHTML = "<h1>You are logged in successfully!, Wait while redirecting ...</h1>";
           
           let closeError = document.createElement("div");
           closeError.addEventListener("click", () => {
