@@ -51,7 +51,7 @@ async function Signup(username, email, password, buttonSubmission) {
           
           errorDivDiv.appendChild(closeError);
           errorDivDiv.appendChild(errorMessage);
-
+          errorDiv.style.zIndex = "500";
           errorDiv.appendChild(errorDivDiv);
 
           console.log(errorDiv);
@@ -80,7 +80,7 @@ async function Signup(username, email, password, buttonSubmission) {
           
           errorDivDiv.appendChild(closeError);
           errorDivDiv.appendChild(errorMessage);
-
+          errorDiv.style.zIndex = "500";
           errorDiv.appendChild(errorDivDiv);
 
           console.log(errorDiv);
