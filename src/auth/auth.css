@@ -3,11 +3,13 @@
     height: 450px;
     border-radius: 15px;
     box-shadow: 3px 4px 4px -4px #0000009c,3px 4px 4px -4px #0000009c,3px 4px 4px -4px #0000009c, 3px 4px 4px -4px #0000009c, -2px -1px 6px 3px #0000002b;
-    margin: 100px auto;
+    
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    position: relative;
+    position: absolute;
+    top: 100px;
+    left: 25%;
 }
 .loginContainer {
     width: 50%;
