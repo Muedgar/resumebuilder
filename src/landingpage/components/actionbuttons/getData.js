@@ -2,6 +2,7 @@ async function getData() {
     await fetch("https://amali-resumebuilder-backend.herokuapp.com/amaliresumebuilder/backend/api/readResume/"+sessionStorage.getItem("currentlyLoggedIn"))
     .then(response => response.json())
     .then(data => {
+        
         setAddress(data.address[0]);
         setIntroduction(data.introduction[0]);
         setWorkExperience(data.workExperience);
@@ -22,7 +23,7 @@ function setFollowMe(data) {
 
 function setHobbies(data) {
     let hobbiesContainer = document.querySelector(".hobbies");
-    hobbiesContainer.children[1].children[0].innerHTML = data.description;
+    hobbiesContainer.children[0].children[0].innerHTML = data.description;
 }
 
 function setPersonalSkills(data) {
@@ -51,19 +52,19 @@ function setProSkills(data) {
 function setEducation(data) {
     let educationContainer = document.querySelector(".education");
     
-       educationContainer.children[1].children[0].innerHTML = data.year;
-       educationContainer.children[1].children[2].innerHTML = data.school;
-       educationContainer.children[2].children[0].innerHTML = data.description;
+       educationContainer.children[0].children[0].innerHTML = data.year;
+       educationContainer.children[0].children[2].innerHTML = data.school;
+       educationContainer.children[1].children[0].innerHTML = data.description;
 
 }
 
 function setWorkExperience(data) {
     let workexperienceContainer = document.querySelectorAll(".experience");
     workexperienceContainer.forEach((experience,i) => {
-        experience.children[1].children[0].innerHTML = data[i].year; // year
-        experience.children[1].children[2].innerHTML = data[i].position; // position
-        experience.children[2].children[0].innerHTML = data[i].address; // address
-        experience.children[3].children[0].innerHTML = data[i].description; // description
+        experience.children[0].children[0].innerHTML = data[i].year; // year
+        experience.children[0].children[2].innerHTML = data[i].position; // position
+        experience.children[1].children[0].innerHTML = data[i].address; // address
+        experience.children[2].children[0].innerHTML = data[i].description; // description
     });
     
 }

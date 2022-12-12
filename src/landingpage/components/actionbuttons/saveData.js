@@ -1,3 +1,5 @@
+import getData from "./getData";
+
 async function saveData(data) {
     const response = await fetch("https://amali-resumebuilder-backend.herokuapp.com/amaliresumebuilder/backend/api/saveResume", {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -16,6 +18,7 @@ async function saveData(data) {
       response.json()
       .then(d => {
         console.log(d, "data saved");
+        getData();
       }).catch(e=> console.log("something got wrong"))
 }
 

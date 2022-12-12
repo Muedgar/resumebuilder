@@ -3,6 +3,7 @@ import "./address.css";
 
 // import assets
 import edit from "./assets/edit.svg";
+import save from "./assets/save.svg";
 import emailImage from "./assets/email.svg";
 import homeIcon from "./assets/home.svg";
 import locationIcon from "./assets/location.svg";
@@ -33,10 +34,11 @@ const Address = () => {
 
         
         <div className="address">
-            <img className="menu" onClick={()=>{
-                setEditStatus(!editStatus)
-            }}src={edit} alt="edit" />
             {editStatus? 
+            <>
+            <img src={save} className="menu" alt="addresssave" onClick={() => {
+                setEditStatus(false);
+            }} />
             <div className="addressEditContainer">
                 <div>
                     <input className="form-control" value={userName} onChange={event=>setUserName(event.target.value)}/>
@@ -61,7 +63,12 @@ const Address = () => {
                     <input value={state} onChange={event=>setState(event.target.value)}/>
                 </div>
             </div>
+            </>
             :
+            <>
+            <img className="menu" onClick={()=>{
+            setEditStatus(true)
+        }}src={edit} alt="edit" />
             <div className="addressContainer">
                 <div>
                     <h4><span className="firstName">{getNames()[0]}</span> <span className="LastName">{getNames()[1]}</span></h4>
@@ -86,6 +93,7 @@ const Address = () => {
                     <h4>{state}</h4>
                 </div>
             </div>
+            </>
             }
         </div>
     )

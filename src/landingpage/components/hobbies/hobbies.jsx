@@ -3,8 +3,9 @@ import React, {useState} from "react";
 import "./hobbies.css";
 
 import edit from "./assets/edit.svg";
+import save from "./assets/save.svg";
 import briefcase from "./assets/briefcase.svg";
-import delet from "./assets/delete.svg";
+
 
 function Hobbies () {
     const [editStatus,setEditStatus] = useState(true);
@@ -18,9 +19,6 @@ function Hobbies () {
     const [description, setDescription] = useState('');
     return(
         <div className="hobbiesContainer">
-            <img className="menu" onClick={()=>{
-                setEditStatus(!editStatus)
-            }}src={edit} alt="edit" />
             <div className="hobbiesTitle">
                 <div className="experienceLogo">
                     <img src={briefcase} alt="briefcase" />
@@ -31,51 +29,45 @@ function Hobbies () {
             </div>
             {
                 !editStatus?
-                <div className="addHobby">
-                    <textarea id="textAreaId" type="text" value={description} onChange={e=>setDescription(e.target.value)} placeholder="describe hobby"></textarea>
-                    <input type="button" onClick={()=> {
+                <>
+                <img className="menu" onClick={()=>{
+                setEditStatus(true);
+                setDescription(hobbies[0].description);
+            }}src={edit} alt="edithobbytwo" />
+                <img src={save} className="menu" alt="hobbiessave" onClick={() => {
+                    
                         if(!description || (description.length<252 || description.length>262)) {
                             document.getElementById("textAreaId").style.border = "2px solid red";                            
+                            
                             return;
                         }
                         document.getElementById("textAreaId").style.border = "2px solid green";
                         let obj = {description};
-                        
-                        if(hobbies.length<1) {
-                            let newExperiences = hobbies;
-                            newExperiences.push(obj);
-                            setHobbies(newExperiences);
+                        setHobbies([obj]);
+                        console.log("setting hobbies", hobbies);
                             setDescription('');
-                        }
-                    }} value="add" />
+                setEditStatus(true);
+            }} />
+                <div className="addHobby">
+                    <textarea id="textAreaId" type="text" value={description} onChange={e=>setDescription(e.target.value)} placeholder="describe hobby"></textarea>
+                    <input type="button" value={`${252-description.length} characters left`} />
                 </div>
+                </>
                 :
                 <>
                 {
                     hobbies.length>0 ?
                     <>
+                    <img className="menu" onClick={()=>{
+                setEditStatus(false)
+                setDescription(hobbies[0].description);
+            }}src={edit} alt="edit" />
                     {
-                        hobbies.map((workExperience,i)=> (
+                        hobbies.map((hobby,i)=> (
                             <div className="hobbies" id={`${i}`} key={i}>
-                                <img className="menu" onClick={e=>{
-                                    let deleteWithKey = e.target.parentNode.id;
-                console.log(deleteWithKey);
-                let dlExperiences = hobbies;
-
-                let setE = [];
-                for(let i=0;i<dlExperiences.length;i++) {
-                    if(String(i)===String(deleteWithKey)) {
-                        continue;
-                    }else {
-                        setE.push(dlExperiences[i]);
-                    }
-                    
-                }
-                setHobbies(setE);
-                                    
-            }}src={delet} alt="delete" />
+                                
                                             <div className="experienceDescription">
-                                                <p>{workExperience.description}</p>
+                                                <p>{hobby.description}</p>
                                             </div>
                                         </div>
                                             ))
@@ -83,9 +75,12 @@ function Hobbies () {
                     </>
                     :
                     <>
-                    {
+                    
+                        <img className="menu" onClick={()=>{
+                            setEditStatus(false)
+                        }}src={edit} alt="edit" />
                     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>Add one hobby</div>
-                    }</>
+                    </>
                 
             }
                 </>

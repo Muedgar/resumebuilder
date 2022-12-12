@@ -12,24 +12,23 @@ function prepareData(addressContainer,workexperienceContainer,educationContainer
 
 
     let workexperienceData = []
-
+    console.log(workexperienceContainer);
     workexperienceContainer.forEach(experience => {
         workexperienceData.push({
-            year: experience.children[1].children[0].innerHTML,
-            position: experience.children[1].children[2].innerHTML,
-            address: experience.children[2].children[0].innerHTML,
-            description: experience.children[3].children[0].innerHTML
+            year: experience.children[0].children[0].innerHTML,
+            position: experience.children[0].children[2].innerHTML,
+            address: experience.children[1].children[0].innerHTML,
+            description: experience.children[2].children[0].innerHTML
         });
     });
-
+    
     let educationData = {
-        year: educationContainer.children[1].children[0].innerHTML,
-        school: educationContainer.children[1].children[2].innerHTML,
-        description: educationContainer.children[2].children[0].innerHTML
+        year: educationContainer.children[0].children[0].innerHTML,
+        school: educationContainer.children[0].children[2].innerHTML,
+        description: educationContainer.children[1].children[0].innerHTML
     }
-
     let hobbiesData = {
-        description: hobbiesContainer.children[1].children[0].innerHTML
+        description: hobbiesContainer.children[0].children[0].innerHTML
     }
 
     let introductionData = {
@@ -79,6 +78,7 @@ function prepareData(addressContainer,workexperienceContainer,educationContainer
     data.push(personalSkillsData);
     data.push(hobbiesData);
     data.push(followmeData);
+    console.log(data);
     return data;
 }
 

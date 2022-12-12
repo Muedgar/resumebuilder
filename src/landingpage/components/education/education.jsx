@@ -4,25 +4,20 @@ import "./education.css";
 
 import edit from "./assets/edit.svg";
 import briefcase from "./assets/briefcase.svg";
-import delet from "./assets/delete.svg";
+import save from "./assets/save.svg";
 
 function Education () {
     const [editStatus,setEditStatus] = useState(true);
 
     const [education, setEducation] = useState([ {year: '2015', jobTitle: 'Hr Manager', description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.'}]);
-/*
-
-       
-    */
+    const [remaining, setRemaining] = useState('');
     // add experience
     const [year, setYear] = useState('');
     const [jobTitle, setJobTitle] = useState('');
     const [description, setDescription] = useState('');
     return(
         <div className="educationContainer">
-            <img className="menu" onClick={()=>{
-                setEditStatus(!editStatus)
-            }}src={edit} alt="edit" />
+           
             <div className="educationTitle">
                 <div className="experienceLogo">
                     <img src={briefcase} alt="briefcase" />
@@ -33,67 +28,74 @@ function Education () {
             </div>
             {
                 !editStatus?
-                <div className="addEducation">
-                    <input type="text" value={year} onChange={e=>setYear(e.target.value)} placeholder="year" />
-                    <input type="text" value={jobTitle} onChange={e=>setJobTitle(e.target.value)} placeholder="job title" />
-                    <textarea id="textAreaId" type="text" value={description} onChange={e=>setDescription(e.target.value)} placeholder="describe experience"></textarea>
-                    <input type="button" onClick={()=> {
+                <>
+                 <img className="menu" onClick={()=>{
+                setEditStatus(true)
+                setYear(education[0].year);
+                    setJobTitle(education[0].jobTitle);
+                    setDescription(education[0].description);
+            }}src={edit} alt="edit" />
+
+<img className="menu" onClick={()=> {
                         if(!description || (description.length<252 || description.length>262)) {
-                            document.getElementById("textAreaId").style.border = "2px solid red";                            
+                            document.getElementById("textAreaId2").style.border = "2px solid red";                            
                             return;
                         }
-                        document.getElementById("textAreaId").style.border = "2px solid green";
+                        document.getElementById("textAreaId2").style.border = "2px solid green";
                         let obj = {
                             year,
                             jobTitle,
                             description
                         };
                         
-                        if(education.length<1) {
-                            let newExperiences = education;
-                            newExperiences.push(obj);
-                            setEducation(newExperiences);
+                        setEducation([obj]);
                             setYear('');
                             setJobTitle('');
                             setDescription('');
-                        }
-                    }} value="add" />
-                </div>
+                        setEditStatus(true);
+                    }} src={save} alt="save" />
+                
+                <div className="education">
+                       <div className="experienceYearTitle">
+                                       <input placeholder="Year" type="number" value={year} onChange={e => {
+                                        setYear(e.target.value)
+                                       }} />
+                                       <div></div>
+                                       <input placeholder="Degree" type="text" value={jobTitle} onChange={e => {
+                                        setJobTitle(e.target.value)
+                                       }} />
+                                   </div>
+                                   <div className="experienceDescription">
+                                       <textarea id="textAreaId2" placeholder="Describe your education" value={description} onChange={e=> {
+                                        setDescription(e.target.value);
+                                        setRemaining(`${252-description.length} characters left`);
+                                       }}></textarea>
+                                   </div>
+                                   <p style={{marginTop: '10px', marginLeft: '150px'}}>{remaining}</p>
+                               </div>
+                </>
                 :
                 <>
                 {
                     education.length>0 ?
                     <>
+                    <img className="menu" onClick={()=>{
+                setEditStatus(false)
+                setYear(education[0].year);
+                setJobTitle(education[0].jobTitle);
+                setDescription(education[0].description);
+            }}src={edit} alt="edit" />
                     {
-                        education.map((workExperience,i)=> (
-                            <div className="education" id={`${i}`} key={i}>
-                                <img className="menu" onClick={e=>{
-                                    let deleteWithKey = e.target.parentNode.id;
-                console.log(deleteWithKey);
-                let dlExperiences = education;
-
-                let setE = [];
-                for(let i=0;i<dlExperiences.length;i++) {
-                    if(String(i)===String(deleteWithKey)) {
-                        continue;
-                    }else {
-                        setE.push(dlExperiences[i]);
-                    }
-                    
-                }
-                setEducation(setE);
-                                    
-            }}src={delet} alt="delete" />
-                                            <div className="experienceYearTitle">
-                                                <h3>{workExperience.year}</h3>
-                                                <div></div>
-                                                <h2>{workExperience.jobTitle}</h2>
-                                            </div>
-                                            <div className="experienceDescription">
-                                                <p>{workExperience.description}</p>
-                                            </div>
-                                        </div>
-                                            ))
+                       <div className="education">
+                       <div className="experienceYearTitle">
+                                       <h3>{education[0].year}</h3>
+                                       <div></div>
+                                       <h2>{education[0].jobTitle}</h2>
+                                   </div>
+                                   <div className="experienceDescription">
+                                       <p>{education[0].description}</p>
+                                   </div>
+                               </div>
                     }
                     </>
                     :

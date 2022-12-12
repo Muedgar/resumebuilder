@@ -4,53 +4,110 @@ import "./followme.css";
 // import assets
 import edit from "./assets/edit.svg";
 import globe from "./assets/globe.svg";
+import save from "./assets/save.svg";
 
 const FollowMe = () => {
     const [editStatus, setEditStatus] = useState(true);
     const [links, setLinks] = useState(['www.linkedin/profile.com','www.facebook.com','www.instagram.com','www.website.com']);
-    const [newLink, setNewLink] = useState('');
-    const [oldLink, setOldLink] = useState('');
+    
 
+    const [skilToInput1, setSkillOne] = useState('');
+     const [skilToInput2, setSkillTwo] = useState('');
+     const [skilToInput3, setSkillThree] = useState('');
+     const [skilToInput4, setSkillFour] = useState('');
+     
 
     return (
 
         
         <div className="followme">
             <img className="menu" onClick={()=>{
-                setEditStatus(!editStatus)
+                setEditStatus(false)
+                setSkillOne(links[0]);
+                setSkillTwo(links[1]);
+                setSkillThree(links[2]);
+                setSkillFour(links[3]);
             }}src={edit} alt="edit" />
+            <img className="menu" onClick={()=>{
+                console.log(skilToInput1, skilToInput2, skilToInput3, skilToInput4);
+                if(skilToInput1.length>=1) {
+                    links[0] = skilToInput1;
+                }
+                if(skilToInput2.length>=1) {
+                    links[1] = skilToInput2;
+                }
+                if(skilToInput3.length>=1) {
+                    links[2] = skilToInput3;
+                }
+                if(skilToInput4.length>=1) {
+                    links[3] = skilToInput4;
+                }
+                setLinks(links);
+                setEditStatus(true);
+            }} src={save} alt="save" />
             <div>
                 <h4 className="skillsTitle">FOLLOW ME</h4>
             </div>
-            {editStatus? 
             <div className="followmeContainer">
                 {
-                    links.map((skil,ky) => (
+                    links.map((skil,ky) => {
 
-                        <div className="personalskillContainer followM" key={ky}>
+                        if(ky===0) {
+                            return(
+                                <div style={{width:'fit-content'}} className="personalskillContainer followM" key={ky}>
                             <div className="globeStyle">
                                 <img src={globe} alt="globe" />
                             </div>
-                            <h4>{skil}</h4>
+                            {
+                               editStatus?<h4>{skil}</h4>:<input value={skilToInput1} onChange={e=>setSkillOne(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                            }
                         </div>
-                    ))
+                            )
+                        }
+
+                        if(ky===1) {
+                            return(
+                                <div className="personalskillContainer followM" key={ky}>
+                            <div className="globeStyle">
+                                <img src={globe} alt="globe" />
+                            </div>
+                            {
+                               editStatus?<h4>{skil}</h4>:<input value={skilToInput2} onChange={e=>setSkillTwo(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                            }
+                        </div>
+                            )
+                        }
+
+
+                        if(ky===2) {
+                            return(
+                                <div className="personalskillContainer followM" key={ky}>
+                            <div className="globeStyle">
+                                <img src={globe} alt="globe" />
+                            </div>
+                            {
+                               editStatus?<h4>{skil}</h4>:<input value={skilToInput3} onChange={e=>setSkillThree(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                            }
+                        </div>
+                            )
+                        }
+
+                        if(ky===3) {
+                            return(
+                                <div className="personalskillContainer followM" key={ky}>
+                            <div className="globeStyle">
+                                <img src={globe} alt="globe" />
+                            </div>
+                            {
+                               editStatus?<h4>{skil}</h4>:<input value={skilToInput4} onChange={e=>setSkillFour(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                            }
+                        </div>
+                            )
+                        }
+                        return <></>
+})
                 }
             </div>
-            :
-            <div className="addfollowme">
-                <input placeholder="Paste link to replace" value={oldLink} onChange={event=>setOldLink(event.target.value)}/>
-                <input placeholder="Add new link" value={newLink} onChange={event=>setNewLink(event.target.value)}/>
-                <button onClick={() => {
-                    links.forEach((lnk,i) => {
-                        if(String(lnk).toLowerCase() === String(oldLink).toLowerCase()) {
-                            let newLinks = links;
-                            newLinks[i] = newLink;
-                            setLinks(newLinks);
-                        }
-                    });
-                }}>Add Link</button>
-            </div>
-            }
         </div>
     )
 }
