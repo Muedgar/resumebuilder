@@ -4,10 +4,11 @@ import ReactToPrint from 'react-to-print';
 
 import './App.css';
 
+import getData from "./landingpage/components/actionbuttons/getData";
+
 
 import LandingPage from './landingpage/landingpage';
 import ActionButtons from './landingpage/components/actionbuttons/actionbuttons';
-import OtherActionButtons from './landingpage/components/actionbuttons/otheractionbuttons';
 import Auth from './auth/auth';
 
 
@@ -22,7 +23,7 @@ function App() {
       setIsLoggedIn(false);
     }
   },[])
-
+  getData();
   const componentRef = useRef();
   const pageStyl = `
       #cvId {
@@ -56,7 +57,6 @@ function App() {
         content={() => componentRef.current}
       />
       <ActionButtons />
-      <OtherActionButtons />
       </div>
         </>
         :

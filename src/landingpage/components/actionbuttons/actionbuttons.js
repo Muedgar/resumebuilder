@@ -3,13 +3,14 @@ import React from "react";
 import prepareData from "./logicPrepareData";
 import saveData from "./saveData";
 
+
 // save data to the database.
 function ActionButtons() {
 
     return (
     <div onClick={() => {
         let addressContainer = document.querySelector(".addressContainer");
-        let workexperienceContainer = document.querySelectorAll(".experience");
+        let workexperienceContainer = [document.getElementById("experience1"),document.getElementById("experience2")];
         let educationContainer = document.querySelector(".education");
         let hobbiesContainer = document.querySelector(".hobbies");
         let introduction = document.getElementById("introductionId");
@@ -17,9 +18,11 @@ function ActionButtons() {
         let personalskills = document.querySelectorAll(".pSkills");
         let followme = document.querySelectorAll(".followM");
 
+        console.log(workexperienceContainer[0].children);
+
         let preparedData = prepareData(addressContainer,workexperienceContainer,educationContainer,hobbiesContainer,introduction,proskills,personalskills,followme);
 
-       // console.log("preparedData", preparedData);
+      console.log("preparedData", preparedData);
 
         let data = {
             user: preparedData[0],

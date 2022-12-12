@@ -19,6 +19,9 @@
 .proskills:hover .menu{
     right: 0;
 }
+.proskills:hover .menu+.menu{
+    right: 20px;
+}
 .proskills .skillsTitle {
     text-align: left;
     color: white;

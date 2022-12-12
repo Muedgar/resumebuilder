@@ -15,9 +15,15 @@
     width: 15px;
     height: 15px;
     cursor: pointer;
+    z-index: -1;
 }
 .followme:hover .menu{
     right: 0;
+    z-index: 1;
+}
+.followme:hover .menu+.menu{
+    right: 20px;
+    z-index: 1;
 }
 .followme .skillsTitle {
     text-align: left;

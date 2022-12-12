@@ -8,13 +8,14 @@
 }
 .address .menu {
     position: absolute;
-    top: 0;
+    top: -1px;
     right: -20px;
     transition: all .3s ease-in;
 }
 .address:hover .menu{
     right: 0;
 }
+
 .address img {
     width: 15px;
     height: 15px;

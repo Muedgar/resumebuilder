@@ -19,6 +19,10 @@
 .personalskills:hover .menu{
     right: 0;
 }
+
+.personalskills:hover .menu+.menu{
+    right: 20px;
+}
 .personalskills .skillsTitle {
     text-align: left;
     color: white;
