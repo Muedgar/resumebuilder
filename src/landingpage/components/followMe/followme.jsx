@@ -23,10 +23,10 @@ const FollowMe = () => {
         <div className="followme">
             <img className="menu" onClick={()=>{
                 setEditStatus(false)
-                setSkillOne(links[0]);
-                setSkillTwo(links[1]);
-                setSkillThree(links[2]);
-                setSkillFour(links[3]);
+                setSkillOne(document.getElementById(`followH40`).innerHTML);
+                setSkillTwo(document.getElementById(`followH41`).innerHTML);
+                setSkillThree(document.getElementById(`followH42`).innerHTML);
+                setSkillFour(document.getElementById(`followH43`).innerHTML);
             }}src={edit} alt="edit" />
             <img className="menu" onClick={()=>{
                 console.log(skilToInput1, skilToInput2, skilToInput3, skilToInput4);
@@ -59,7 +59,7 @@ const FollowMe = () => {
                                 <img src={globe} alt="globe" />
                             </div>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput1} onChange={e=>setSkillOne(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                               editStatus?<h4 id="followH40">{skil}</h4>:<input value={skilToInput1} onChange={e=>setSkillOne(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
                             }
                         </div>
                             )
@@ -72,7 +72,7 @@ const FollowMe = () => {
                                 <img src={globe} alt="globe" />
                             </div>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput2} onChange={e=>setSkillTwo(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                               editStatus?<h4 id="followH41">{skil}</h4>:<input value={skilToInput2} onChange={e=>setSkillTwo(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
                             }
                         </div>
                             )
@@ -86,7 +86,7 @@ const FollowMe = () => {
                                 <img src={globe} alt="globe" />
                             </div>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput3} onChange={e=>setSkillThree(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                               editStatus?<h4 id="followH42">{skil}</h4>:<input value={skilToInput3} onChange={e=>setSkillThree(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
                             }
                         </div>
                             )
@@ -99,7 +99,7 @@ const FollowMe = () => {
                                 <img src={globe} alt="globe" />
                             </div>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput4} onChange={e=>setSkillFour(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
+                               editStatus?<h4 id="followH43">{skil}</h4>:<input value={skilToInput4} onChange={e=>setSkillFour(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new link" type="text" />
                             }
                         </div>
                             )

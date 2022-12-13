@@ -70,15 +70,15 @@ function WorkExperience () {
                 <>
                 <img className="menu" src={edit} onClick={() => {
                     setEditStatus(true);
-                    setYear(workExperiences[0].year);
-                    setJobTitle(workExperiences[0].jobTitle);
-                    setLocation(workExperiences[0].location);
-                    setDescription(workExperiences[0].description);
+                    setYear(document.getElementById("workYearId0").innerHTML);
+                    setJobTitle(document.getElementById("workTitleId0").innerHTML);
+                    setLocation(document.getElementById("workLocationId0").innerHTML);
+                    setDescription(document.getElementById("workDescriptionId0").innerHTML);
 
-                    setYearTwo(workExperiences[1].year);
-                    setJobTitleTwo(workExperiences[1].jobTitle);
-                    setLocationTwo(workExperiences[1].location);
-                    setDescriptionTwo(workExperiences[1].description);
+                    setYearTwo(document.getElementById("workYearId1").innerHTML);
+                    setJobTitleTwo(document.getElementById("workTitleId1").innerHTML);
+                    setLocationTwo(document.getElementById("workLocationId1").innerHTML);
+                    setDescriptionTwo(document.getElementById("workDescriptionId1").innerHTML);
                 }} alt="edit" />
             <img className="menu"  onClick={()=> {
                         if(!description || (description.length<252 || description.length>262)) {
@@ -149,15 +149,15 @@ function WorkExperience () {
                 <>
                 <img className="menu" onClick={()=>{
                 setEditStatus(false);
-                setYear(workExperiences[0].year);
-                    setJobTitle(workExperiences[0].jobTitle);
-                    setLocation(workExperiences[0].location);
-                    setDescription(workExperiences[0].description);
+                setYear(document.getElementById("workYearId0").innerHTML);
+                    setJobTitle(document.getElementById("workTitleId0").innerHTML);
+                    setLocation(document.getElementById("workLocationId0").innerHTML);
+                    setDescription(document.getElementById("workDescriptionId0").innerHTML);
 
-                    setYearTwo(workExperiences[1].year);
-                    setJobTitleTwo(workExperiences[1].jobTitle);
-                    setLocationTwo(workExperiences[1].location);
-                    setDescriptionTwo(workExperiences[1].description);
+                    setYearTwo(document.getElementById("workYearId1").innerHTML);
+                    setJobTitleTwo(document.getElementById("workTitleId1").innerHTML);
+                    setLocationTwo(document.getElementById("workLocationId1").innerHTML);
+                    setDescriptionTwo(document.getElementById("workDescriptionId1").innerHTML);
             }}src={edit} alt="edit" />
                 {
                     workExperiences.length>0 ?
@@ -166,15 +166,15 @@ function WorkExperience () {
                         workExperiences.map((workExperience,i)=> (
                             <div className="experience" id={`experience${i+1}`} key={i}>
                                 <div className="experienceYearTitle">
-                                                <h3>{workExperience.year}</h3>
+                                                <h3 id={`workYearId${i}`}>{workExperience.year}</h3>
                                                 <div></div>
-                                                <h2>{workExperience.jobTitle}</h2>
+                                                <h2 id={`workTitleId${i}`}>{workExperience.jobTitle}</h2>
                                             </div>
                                             <div className="experienceAddress">
-                                                <p>{workExperience.location}</p>
+                                                <p id={`workLocationId${i}`}>{workExperience.location}</p>
                                             </div>
                                             <div className="experienceDescription">
-                                                <p>{workExperience.description}</p>
+                                                <p id={`workDescriptionId${i}`}>{workExperience.description}</p>
                                             </div>
                                         </div>
                                             ))

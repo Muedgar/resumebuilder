@@ -37,7 +37,7 @@ function ActionButtons() {
         }
 
         saveData(data);
-    }} className='downloadContainer'><button>Save CV</button></div>
+    }} className='downloadContainer'><button id="saveStatus">Save CV</button></div>
     )
 }
 
