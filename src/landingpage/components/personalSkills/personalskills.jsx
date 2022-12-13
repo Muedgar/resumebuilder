@@ -53,11 +53,11 @@ const PersonalSkills = () => {
         <div className="personalskills">
             <img className="menu" onClick={()=>{
                 setEditStatus(false)
-                setSkillOne(skills[0]);
-                setSkillTwo(skills[1]);
-                setSkillThree(skills[2]);
-                setSkillFour(skills[3]);
-                setSkillFive(skills[4]);
+                setSkillOne(document.getElementById(`personalH40`).innerHTML);
+                setSkillTwo(document.getElementById(`personalH41`).innerHTML);
+                setSkillThree(document.getElementById(`personalH42`).innerHTML);
+                setSkillFour(document.getElementById(`personalH43`).innerHTML);
+                setSkillFive(document.getElementById(`personalH44`).innerHTML);
             }}src={edit} alt="edit" />
             <img className="menu"  onClick={()=>{
                 console.log(skilToInput1, skilToInput2, skilToInput3, skilToInput4,skilToInput5);
@@ -90,7 +90,7 @@ const PersonalSkills = () => {
                             return(
                                 <div className="personalskillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput1} onChange={e=>setSkillOne(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id="personalH40">{skil}</h4>:<input value={skilToInput1} onChange={e=>setSkillOne(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div className="personalskillLevelContainer pSkills">
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} one personalskillLevel`}></div>
@@ -107,7 +107,7 @@ const PersonalSkills = () => {
                             return(
                                 <div className="personalskillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput2} onChange={e=>setSkillTwo(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id="personalH41">{skil}</h4>:<input value={skilToInput2} onChange={e=>setSkillTwo(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div className="personalskillLevelContainer pSkills">
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} one personalskillLevel`}></div>
@@ -124,7 +124,7 @@ const PersonalSkills = () => {
                             return(
                                 <div className="personalskillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput3} onChange={e=>setSkillThree(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id="personalH42">{skil}</h4>:<input value={skilToInput3} onChange={e=>setSkillThree(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div className="personalskillLevelContainer pSkills">
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} one personalskillLevel`}></div>
@@ -140,7 +140,7 @@ const PersonalSkills = () => {
                           return(
                             <div className="personalskillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput4} onChange={e=>setSkillFour(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id="personalH43">{skil}</h4>:<input value={skilToInput4} onChange={e=>setSkillFour(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div className="personalskillLevelContainer pSkills">
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} one personalskillLevel`}></div>
@@ -156,7 +156,7 @@ const PersonalSkills = () => {
                             return(
                                 <div className="personalskillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput5} onChange={e=>setSkillFive(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id="personalH44">{skil}</h4>:<input value={skilToInput5} onChange={e=>setSkillFive(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div className="personalskillLevelContainer pSkills">
                                 <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} one personalskillLevel`}></div>
@@ -168,22 +168,7 @@ const PersonalSkills = () => {
                         </div>
                             )
                         }
-                        if(ky===5) {
-                            return(
-                                <div className="personalskillContainer" key={ky}>
-                            {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput5} onChange={e=>setSkillFive(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
-                            }
-                            <div className="personalskillLevelContainer pSkills">
-                                <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} one personalskillLevel`}></div>
-                                <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} two personalskillLevel`}></div>
-                                <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} three personalskillLevel`}></div>
-                                <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} four personalskillLevel`}></div>
-                                <div onClick={handlePersonalLevel} className={`personalSkillLevelClass${ky} five personalskillLevel`}></div>
-                            </div>
-                        </div>
-                            )
-                        }
+                        
                         return (<></>)
                     })
                 }

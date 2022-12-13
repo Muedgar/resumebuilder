@@ -1,6 +1,8 @@
 import getData from "./getData";
 
 async function saveData(data) {
+  let saveButton = document.getElementById("saveStatus");
+  saveButton.innerHTML = "Saving ..."
     const response = await fetch("https://amali-resumebuilder-backend.herokuapp.com/amaliresumebuilder/backend/api/saveResume", {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
@@ -18,6 +20,11 @@ async function saveData(data) {
       response.json()
       .then(d => {
         console.log(d, "data saved");
+        saveButton.innerHTML = "Saved CV.";
+
+        setTimeout(() => {
+          saveButton.innerHTML = "Save CV";
+        },10000);
         getData();
       }).catch(e=> console.log("something got wrong"))
 }

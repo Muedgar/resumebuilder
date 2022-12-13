@@ -25,12 +25,12 @@ const ProSkills = () => {
             <div className="skillsContainer">
             <img className="menu" onClick={()=>{
                 setEditStatus(false)
-                setSkillOne(skills[0]);
-                setSkillTwo(skills[1]);
-                setSkillThree(skills[2]);
-                setSkillFour(skills[3]);
-                setSkillFive(skills[4]);
-                setSkillSix(skills[5]);
+                setSkillOne(document.getElementById(`skillH40`).innerHTML);
+                setSkillTwo(document.getElementById(`skillH41`).innerHTML);
+                setSkillThree(document.getElementById(`skillH42`).innerHTML);
+                setSkillFour(document.getElementById(`skillH43`).innerHTML);
+                setSkillFive(document.getElementById(`skillH44`).innerHTML);
+                setSkillSix(document.getElementById(`skillH45`).innerHTML);
             }}src={edit} alt="edit" />
             <img className="menu" onClick={()=>{
                 console.log(skilToInput1, skilToInput2, skilToInput3, skilToInput4,skilToInput5,skilToInput6);
@@ -63,7 +63,7 @@ const ProSkills = () => {
                                 <div className="skillContainer" key={ky}>
                             {
                                
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput1} onChange={e=>setSkillOne(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id={`skillH40`}>{skil}</h4>:<input value={skilToInput1} onChange={e=>setSkillOne(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div onClick={(e) => {
                                 e.preventDefault();
@@ -94,7 +94,7 @@ const ProSkills = () => {
                             return (
                                 <div className="skillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput2} onChange={e=>setSkillTwo(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id={`skillH41`}>{skil}</h4>:<input value={skilToInput2} onChange={e=>setSkillTwo(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div onClick={(e) => {
                                 e.preventDefault();
@@ -125,7 +125,7 @@ const ProSkills = () => {
                             return (
                                 <div className="skillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput3} onChange={e=>setSkillThree(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id={`skillH42`}>{skil}</h4>:<input value={skilToInput3} onChange={e=>setSkillThree(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div onClick={(e) => {
                                 e.preventDefault();
@@ -155,7 +155,7 @@ const ProSkills = () => {
                             return (
                                 <div className="skillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput4} onChange={e=>setSkillFour(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id={`skillH43`}>{skil}</h4>:<input value={skilToInput4} onChange={e=>setSkillFour(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div onClick={(e) => {
                                 e.preventDefault();
@@ -185,7 +185,7 @@ const ProSkills = () => {
                             return (
                                 <div className="skillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput5} onChange={e=>setSkillFive(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id={`skillH44`}>{skil}</h4>:<input value={skilToInput5} onChange={e=>setSkillFive(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div onClick={(e) => {
                                 e.preventDefault();
@@ -215,7 +215,7 @@ const ProSkills = () => {
                             return (
                                 <div className="skillContainer" key={ky}>
                             {
-                               editStatus?<h4>{skil}</h4>:<input value={skilToInput6} onChange={e=>setSkillSix(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
+                               editStatus?<h4 id={`skillH45`}>{skil}</h4>:<input value={skilToInput6} onChange={e=>setSkillSix(e.target.value)} style={{width: '75%', height: '24px', margin: '1px 0 0 10px'}} placeholder="Enter new skill" type="text" />
                             }
                             <div onClick={(e) => {
                                 e.preventDefault();

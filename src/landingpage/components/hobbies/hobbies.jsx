@@ -32,7 +32,7 @@ function Hobbies () {
                 <>
                 <img className="menu" onClick={()=>{
                 setEditStatus(true);
-                setDescription(hobbies[0].description);
+                setDescription(document.getElementById("hobbyDescriptionId0").innerHTML);
             }}src={edit} alt="edithobbytwo" />
                 <img src={save} className="menu" alt="hobbiessave" onClick={() => {
                     
@@ -60,14 +60,14 @@ function Hobbies () {
                     <>
                     <img className="menu" onClick={()=>{
                 setEditStatus(false)
-                setDescription(hobbies[0].description);
+                setDescription(document.getElementById("hobbyDescriptionId0").innerHTML);
             }}src={edit} alt="edit" />
                     {
                         hobbies.map((hobby,i)=> (
                             <div className="hobbies" id={`${i}`} key={i}>
                                 
                                             <div className="experienceDescription">
-                                                <p>{hobby.description}</p>
+                                                <p id="hobbyDescriptionId0">{hobby.description}</p>
                                             </div>
                                         </div>
                                             ))

@@ -2,7 +2,7 @@ async function getData() {
     await fetch("https://amali-resumebuilder-backend.herokuapp.com/amaliresumebuilder/backend/api/readResume/"+sessionStorage.getItem("currentlyLoggedIn"))
     .then(response => response.json())
     .then(data => {
-        
+        console.log(data.proSkills);
         setAddress(data.address[0]);
         setIntroduction(data.introduction[0]);
         setWorkExperience(data.workExperience);

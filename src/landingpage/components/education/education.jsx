@@ -31,9 +31,9 @@ function Education () {
                 <>
                  <img className="menu" onClick={()=>{
                 setEditStatus(true)
-                setYear(education[0].year);
-                    setJobTitle(education[0].jobTitle);
-                    setDescription(education[0].description);
+                setYear(document.getElementById("educationYearId0").innerHTML);
+                    setJobTitle(document.getElementById("educationTitleId0").innerHTML);
+                    setDescription(document.getElementById("educationDescriptionId0").innerHTML);
             }}src={edit} alt="edit" />
 
 <img className="menu" onClick={()=> {
@@ -81,19 +81,19 @@ function Education () {
                     <>
                     <img className="menu" onClick={()=>{
                 setEditStatus(false)
-                setYear(education[0].year);
-                setJobTitle(education[0].jobTitle);
-                setDescription(education[0].description);
+                setYear(document.getElementById("educationYearId0").innerHTML);
+                setJobTitle(document.getElementById("educationTitleId0").innerHTML);
+                setDescription(document.getElementById("educationDescriptionId0").innerHTML);
             }}src={edit} alt="edit" />
                     {
                        <div className="education">
                        <div className="experienceYearTitle">
-                                       <h3>{education[0].year}</h3>
+                                       <h3 id="educationYearId0">{education[0].year}</h3>
                                        <div></div>
-                                       <h2>{education[0].jobTitle}</h2>
+                                       <h2 id="educationTitleId0">{education[0].jobTitle}</h2>
                                    </div>
                                    <div className="experienceDescription">
-                                       <p>{education[0].description}</p>
+                                       <p id="educationDescriptionId0">{education[0].description}</p>
                                    </div>
                                </div>
                     }

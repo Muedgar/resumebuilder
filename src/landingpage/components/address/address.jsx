@@ -67,30 +67,36 @@ const Address = () => {
             :
             <>
             <img className="menu" onClick={()=>{
-            setEditStatus(true)
+            setEditStatus(true);
+            setUserName(document.querySelector(".firstName").innerHTML+" "+document.querySelector(".LastName").innerHTML);
+            setJobTitle(document.getElementById("jobId").innerHTML);
+            setPhoneNumber(document.getElementById("phoneId").innerHTML);
+            setEmail(document.getElementById("emailId").innerHTML);
+            setStreet(document.getElementById("streetId").innerHTML);
+            setState(document.getElementById("stateId").innerHTML);
         }}src={edit} alt="edit" />
             <div className="addressContainer">
                 <div>
                     <h4><span className="firstName">{getNames()[0]}</span> <span className="LastName">{getNames()[1]}</span></h4>
                 </div>
                 <div>
-                    <h4>{jobTitle}</h4>
+                    <h4 id="jobId">{jobTitle}</h4>
                 </div>
                 <div>
                     <img src={phoneIcon} alt="phoneIcon" />
-                    <h4>{phoneNumber}</h4>
+                    <h4 id="phoneId">{phoneNumber}</h4>
                 </div>
                 <div>
                     <img src={emailImage} alt="emailImage" />
-                    <h4>{email}</h4>
+                    <h4 id="emailId">{email}</h4>
                 </div>
                 <div>
                     <img src={homeIcon} alt="homeIcon" />
-                    <h4>{street}</h4>
+                    <h4 id="streetId">{street}</h4>
                 </div>
                 <div>
                     <img src={locationIcon} alt="locationIcon" />
-                    <h4>{state}</h4>
+                    <h4 id="stateId">{state}</h4>
                 </div>
             </div>
             </>

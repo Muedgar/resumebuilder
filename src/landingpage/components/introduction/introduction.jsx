@@ -27,7 +27,7 @@ const Introduction = () => {
             <div>
                 <img className="menu" onClick={()=>{
                 setEditStatus(false)
-                setEditIntro(introduction);
+                setEditIntro(document.getElementById("introductionId").innerHTML);
             }} src={edit} alt="edit" />
                 <p id="introductionId">
                     {introduction}
@@ -37,7 +37,6 @@ const Introduction = () => {
             <div>
             <img className="menu" onClick={()=>{
                 setEditStatus(true);
-                setEditIntro(introduction);
             }} src={edit} alt="edit" />
             <img src={save}  onClick={() => {
                     
