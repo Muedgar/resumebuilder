@@ -71,7 +71,9 @@ function App() {
         
         <div className='navbar'>
           <div><img style={{width: '50px', height: '50px'}} src={logo} alt="logo" /><h1>ResumeBuilder</h1></div>
-          
+          <h1 style={{width: '50px', height: '50px'}} onClick={() => {
+            window.location = "/";
+          }} className='moreaction'>R</h1>
         </div>
         <div style={{width: '100vw', height: '70px'}}></div>
           {/* show auth screen */}
