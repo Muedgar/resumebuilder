@@ -31,7 +31,8 @@ async function Signin(email, password, buttonSubmission) {
                                      
         
         sessionStorage.setItem("currentlyLoggedIn", data.user.username);
-        window.location = "/";
+        localStorage.setItem("currentlyLoggedIn", data.user.username);
+        window.location = "/dashboard";
         let errorDiv = document.createElement("div");
           errorDiv.setAttribute("class","errorDiv");
           errorDiv.style.backgroundColor = "green";

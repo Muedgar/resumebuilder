@@ -19,7 +19,7 @@ function App() {
   
   useEffect(()=> {
     console.log("calling useEffect ...");
-    if(sessionStorage.getItem("currentlyLoggedIn")) {
+    if(localStorage.getItem("currentlyLoggedIn")) {
       setIsLoggedIn(true);
     }else {
       setIsLoggedIn(false);
@@ -44,14 +44,22 @@ function App() {
       {isLoggedIn?
         <>
         <div className='navbar'>
-          <div><img style={{width: '50px', height: '50px'}} src={logo} alt="logo" /><h1>ResumeBuilder</h1></div>
+          <div style={{cursor: "pointer"}} onClick={() => {
+            window.location = "/"
+          }}><img style={{width: '50px', height: '50px'}} src={logo} alt="logo" /><h1>ResumeBuilder</h1></div>
           <h1 onClick={() => {
             console.log("clicked");
             document.querySelector(".actionsDiv").classList.toggle("actionsDivShow");
-          }} className='moreaction'>{sessionStorage.getItem("currentlyLoggedIn")}</h1>
+          }} className='moreaction'>{localStorage.getItem("currentlyLoggedIn")}</h1>
           <section className='actionsDiv'>
+          <a href='/dashboard' className='links'>Template Creative</a>
+          <a href='/templatetwo' className='links'>Template Simple</a>
+          <a href='/templatethree' className='links'>Template Professional</a>
+          <a href='/templatefour' className='links'>Template Modern</a>
+          
           <button onClick={() => {
             sessionStorage.clear();
+            localStorage.removeItem("currentlyLoggedIn")
             window.location = "/";
           }}>Logout</button>
           </section>
@@ -71,7 +79,9 @@ function App() {
         
         <div className='navbar'>
           <div><img style={{width: '50px', height: '50px'}} src={logo} alt="logo" /><h1>ResumeBuilder</h1></div>
-          
+          <h1 style={{width: '50px', height: '50px'}} onClick={() => {
+            window.location = "/";
+          }} className='moreaction'>R</h1>
         </div>
         <div style={{width: '100vw', height: '70px'}}></div>
           {/* show auth screen */}

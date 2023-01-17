@@ -232,12 +232,27 @@ html,body {
     cursor: pointer;
 }
 
+.links {
+ width: 250px;
+ height: 51px;
+ margin-top: 5px;
+ background-color: black;
+ color: white;
+ cursor: pointer;
+ text-decoration: none;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
 .actionsDiv {
       position: absolute;
     right: 100px;
     top: 80px;
-    width: 206px;
-    height: 80px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
     background-color: rgb(113,81,169);
     align-items: center;
     display: none;
